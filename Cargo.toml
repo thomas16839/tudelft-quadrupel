@@ -1,0 +1,30 @@
+[package]
+name = "tudelft-quadrupel"
+version = "2.1.0"
+edition = "2021"
+authors = [
+    "Anne Stijns <anstijns@gmail.com>",
+    "Jonathan Brouwer <jonathantbrouwer@gmail.com>",
+    "Jonathan Dönszelmann <jonabent@gmail.com>",
+    "Victor Roest <victor@xirion.net>",
+]
+license = "MIT"
+description = "Hardware support library for the quadrupel drone project (embedded systems lab)."
+repository = "https://gitlab.ewi.tudelft.nl/cese/embedded-systems-lab/tudelft-quadrupel"
+categories = ["Embedded development"]
+keywords = ["tudelft"]
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ringbuffer = "0.12.0"
+cortex-m = "0.7.6"
+alloc-cortex-m = "0.4.3"
+cortex-m-rt = "0.7.3"
+nrf51-hal = "0.16.0"
+nrf51-pac = "0.12.2"
+void = { version = "1.0.2", default-features = false }
+embedded-hal = { version = "0.2.7", features = ["unproven"] }
+fixed = { version = "1.20" }
+nb = "1.0.0"

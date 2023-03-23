@@ -1,0 +1,15 @@
+image: "0x76/rust:1.67-2"
+
+cache:
+  key: $CI_COMMIT_REF_SLUG
+  paths:
+    - target/
+
+# Use cargo to test the project
+lint:
+  before_script:
+    - rustc --version && cargo --version # Print version info for debugging
+  script:
+    - cargo build
+    - cargo fmt --all -- --check
+    - cargo clippy -- -D warnings
